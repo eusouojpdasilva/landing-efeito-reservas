@@ -141,124 +141,93 @@ export default function Home() {
       >
         {/* Hero */}
         <section
-  aria-label="Hero"
-  className="relative min-h-[min(92vh,56rem)] overflow-hidden border-b border-white/[0.08] px-5 pb-16 pt-12 sm:px-8 sm:pb-20 sm:pt-14 md:px-10 lg:pb-28 lg:pt-20"
-  style={{
-    backgroundImage: "url('/hero-bg.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center right",
-    backgroundRepeat: "no-repeat",
-  }}
->
-  <div className="absolute inset-0 bg-black/70 z-0" />
+          aria-label="Hero"
+          className="relative min-h-[min(92vh,56rem)] overflow-hidden border-b border-white/[0.08] px-5 pb-16 pt-12 sm:px-8 sm:pb-20 sm:pt-14 md:px-10 lg:pb-28 lg:pt-20"
+        >
+          <TechGrid />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent" />
+          <SectionGlow />
+          <div
+            aria-hidden="true"
+            className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/70 to-transparent"
+          />
 
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-[radial-gradient(circle_at_78%_30%,rgba(251,191,36,0.16),transparent_32%)]"
-  />
+          <div className="relative mx-auto flex max-w-6xl flex-col lg:min-h-[70vh] lg:flex-row lg:items-stretch lg:gap-12">
+            <div className="flex flex-1 flex-col justify-center">
+              <Reveal delayMs={0}>
+                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/15 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-amber-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm">
+                  Reunião estratégica
+                </div>
+              </Reveal>
 
-  <div
-    aria-hidden="true"
-    className="absolute inset-0 bg-[linear-gradient(to_right,rgba(5,5,8,0.96)_0%,rgba(5,5,8,0.86)_34%,rgba(5,5,8,0.56)_58%,rgba(5,5,8,0.18)_100%)]"
-  />
+              <Reveal delayMs={40}>
+                <h1 className="mt-6 max-w-4xl text-[clamp(2rem,7vw,3.95rem)] font-bold leading-[0.95] tracking-[-0.04em] sm:leading-[0.93]">
+                  <span className="block bg-gradient-to-b from-white via-zinc-50 to-zinc-200 bg-clip-text text-transparent">
+                    SALA ESTRATÉGICA
+                  </span>
+                  <span className="mt-2 block bg-gradient-to-r from-amber-100 via-amber-200 to-amber-400 bg-clip-text text-transparent">
+                    EFEITO RESERVAS #01
+                  </span>
+                </h1>
+              </Reveal>
 
-  <TechGrid />
+              <Reveal delayMs={80}>
+                <p className="mt-8 max-w-2xl text-[1.125rem] leading-relaxed text-zinc-200 sm:text-[1.25rem] sm:leading-[1.65] md:text-[1.35rem]">
+                  Como agentes de viagens estão organizando Instagram, WhatsApp
+                  e atendimento para gerar reservas com mais previsibilidade
+                  usando IA.
+                </p>
+              </Reveal>
 
-  <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-amber-400/60 to-transparent" />
+              <Reveal delayMs={120}>
+                <div className="mt-8 flex flex-wrap items-center gap-4">
+                  <span className="flex items-center gap-2.5 rounded-2xl border border-zinc-600/70 bg-zinc-900/95 px-5 py-3.5 text-[0.95rem] font-semibold text-white shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.1),0_0_0_1px_rgba(251,191,36,0.18)] sm:text-base">
+                    <span className="h-2.5 w-2.5 rounded-full bg-amber-400 shadow-[0_0_16px_rgba(251,191,36,0.75)]" />
+                    Dia 27/05 • Ao vivo e gratuito
+                  </span>
+                </div>
+              </Reveal>
+            </div>
 
-  <div
-    aria-hidden="true"
-    className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/70 to-transparent"
-  />
-
-  <div className="relative z-10 mx-auto flex max-w-6xl flex-col lg:min-h-[70vh] lg:flex-row lg:items-stretch lg:gap-12">
-    <div className="flex flex-1 flex-col justify-center">
-      <Reveal delayMs={0}>
-        <div className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/15 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-amber-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm">
-          Reunião estratégica
-        </div>
-      </Reveal>
-
-      <Reveal delayMs={40}>
-        <h1 className="mt-6 max-w-4xl text-[clamp(2.4rem,8vw,5.3rem)] font-extrabold leading-[0.92] tracking-[-0.05em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
-          <span className="block">
-            SALA ESTRATÉGICA
-          </span>
-
-          <span className="mt-2 block bg-gradient-to-r from-amber-100 via-amber-300 to-amber-500 bg-clip-text text-transparent">
-            EFEITO RESERVAS #01
-          </span>
-        </h1>
-      </Reveal>
-
-      <Reveal delayMs={80}>
-        <p className="mt-8 max-w-2xl text-[1.15rem] leading-relaxed text-zinc-200 sm:text-[1.28rem] sm:leading-[1.7] md:text-[1.45rem]">
-          Como agentes de viagens estão organizando Instagram, WhatsApp
-          e atendimento para gerar reservas com mais previsibilidade
-          usando IA.
-        </p>
-      </Reveal>
-
-      <Reveal delayMs={120}>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <span className="flex items-center gap-2.5 rounded-2xl border border-zinc-600/70 bg-zinc-900/90 px-5 py-3.5 text-[0.95rem] font-semibold text-white shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.1),0_0_0_1px_rgba(251,191,36,0.18)] backdrop-blur-sm sm:text-base">
-            <span className="h-2.5 w-2.5 rounded-full bg-amber-400 shadow-[0_0_16px_rgba(251,191,36,0.75)]" />
-            Dia 27/05 • Ao vivo e gratuito
-          </span>
-        </div>
-      </Reveal>
-    </div>
-
-    <Reveal
-      delayMs={100}
-      className="relative mt-10 flex flex-1 flex-col justify-center lg:mt-0 lg:max-w-md"
-    >
-      <div className="relative overflow-hidden rounded-2xl border border-zinc-500/40 bg-gradient-to-br from-zinc-800/92 via-zinc-900/95 to-[#0d0d14]/98 p-6 shadow-[0_28px_70px_-18px_rgba(0,0,0,0.75),inset_0_1px_0_rgba(255,255,255,0.08),0_0_0_1px_rgba(251,191,36,0.15)] backdrop-blur-md sm:p-8">
-        <TechGrid subtle className="rounded-2xl" />
-
-        <div className="absolute -right-16 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-amber-400/20 blur-3xl" />
-
-        <p className="relative text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-amber-200">
-          Efeito Reservas
-        </p>
-
-        <blockquote className="relative mt-5 border-l-2 border-amber-400/70 pl-5 text-[1.02rem] leading-[1.75] text-zinc-200 sm:text-[1.08rem]">
-          <p className="text-zinc-100">
-            Não é uma aula técnica sobre ferramentas.
-          </p>
-
-          <p className="mt-3 text-zinc-100">
-            É uma conversa estratégica sobre estrutura,
-            previsibilidade e operação no turismo.
-          </p>
-        </blockquote>
-
-        <div className="relative mt-7 grid grid-cols-1 gap-3 border-t border-white/10 pt-7">
-          <div className="flex items-center justify-between gap-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
-              Quando
-            </p>
-
-            <p className="text-base font-bold text-white">
-              Dia 27/05
-            </p>
+            <Reveal
+              delayMs={100}
+              className="relative mt-10 flex flex-1 flex-col justify-center lg:mt-0 lg:max-w-md"
+            >
+              <div className="relative overflow-hidden rounded-2xl border border-zinc-500/40 bg-gradient-to-br from-zinc-800/95 via-zinc-900/95 to-[#0d0d14] p-6 shadow-[0_28px_70px_-18px_rgba(0,0,0,0.75),inset_0_1px_0_rgba(255,255,255,0.08),0_0_0_1px_rgba(251,191,36,0.15)] backdrop-blur-md sm:p-8">
+                <TechGrid subtle className="rounded-2xl" />
+                <div className="absolute -right-16 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-amber-400/25 blur-3xl" />
+                <p className="relative text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-amber-200">
+                  Efeito Reservas
+                </p>
+                <blockquote className="relative mt-5 border-l-2 border-amber-400/70 pl-5 text-[1.02rem] leading-[1.65] text-zinc-200 sm:text-[1.08rem]">
+                  <p className="text-zinc-100">
+                    Não é uma aula técnica sobre ferramentas.
+                  </p>
+                  <p className="mt-3 text-zinc-100">
+                    É uma conversa estratégica sobre estrutura, previsibilidade
+                    e operação no turismo.
+                  </p>
+                </blockquote>
+                <div className="relative mt-7 grid grid-cols-1 gap-3 border-t border-white/10 pt-7">
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                      Quando
+                    </p>
+                    <p className="text-base font-bold text-white">Dia 27/05</p>
+                  </div>
+                  <div className="flex items-center justify-between gap-3">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+                      Formato
+                    </p>
+                    <p className="text-base font-bold text-white">
+                      Ao vivo e gratuito
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
           </div>
-
-          <div className="flex items-center justify-between gap-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
-              Formato
-            </p>
-
-            <p className="text-base font-bold text-white">
-              Ao vivo e gratuito
-            </p>
-          </div>
-        </div>
-      </div>
-    </Reveal>
-  </div>
-</section>
-
+        </section>
 
         {/* Problema */}
         <Reveal>
