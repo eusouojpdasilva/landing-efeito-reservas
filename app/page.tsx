@@ -144,10 +144,10 @@ export default function Home() {
   aria-label="Hero"
   className="relative min-h-[min(92vh,56rem)] overflow-hidden border-b border-white/[0.08] px-5 pb-16 pt-12 sm:px-8 sm:pb-20 sm:pt-14 md:px-10 lg:pb-28 lg:pt-20"
   style={{
-    backgroundImage: "url('/hero-bg.jpg')",
-    backgroundSize: "cover",
-    backgroundPosition: "center right",
+    backgroundImage: "url('/hero-bg.png')",
+    backgroundSize: "contain",
     backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
   }}
 >
   <div className="absolute inset-0 bg-black/70 z-0" />
@@ -180,12 +180,12 @@ export default function Home() {
       </Reveal>
 
       <Reveal delayMs={40}>
-        <h1 className="mt-6 max-w-4xl text-[clamp(2.4rem,8vw,5.3rem)] font-extrabold leading-[0.92] tracking-[-0.05em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
+        <h1 className="mt-6 max-w-4xl text-[clamp(2.2rem,7.5vw,4.8rem)] font-extrabold leading-[0.95] tracking-[-0.05em] text-white drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]">
           <span className="block">
             SALA ESTRATÉGICA
           </span>
 
-          <span className="mt-2 block bg-gradient-to-r from-amber-100 via-amber-300 to-amber-500 bg-clip-text text-transparent">
+          <span className="mt-2.5 block bg-gradient-to-r from-amber-100 via-amber-300 to-amber-500 bg-clip-text text-transparent">
             EFEITO RESERVAS #01
           </span>
         </h1>
@@ -211,45 +211,45 @@ export default function Home() {
 
     <Reveal
       delayMs={100}
-      className="relative mt-10 flex flex-1 flex-col justify-center lg:mt-0 lg:max-w-md"
+      className="relative mt-16 flex flex-1 flex-col justify-center lg:mt-0 lg:max-w-sm lg:translate-x-0 lg:translate-y-6"
     >
-      <div className="relative overflow-hidden rounded-2xl border border-zinc-500/40 bg-gradient-to-br from-zinc-800/92 via-zinc-900/95 to-[#0d0d14]/98 p-6 shadow-[0_28px_70px_-18px_rgba(0,0,0,0.75),inset_0_1px_0_rgba(255,255,255,0.08),0_0_0_1px_rgba(251,191,36,0.15)] backdrop-blur-md sm:p-8">
+      <div className="relative overflow-hidden rounded-2xl border border-zinc-500/40 bg-gradient-to-br from-zinc-800/85 via-zinc-900/90 to-[#0d0d14]/95 p-5 shadow-[0_28px_70px_-18px_rgba(0,0,0,0.75),inset_0_1px_0_rgba(255,255,255,0.08),0_0_0_1px_rgba(251,191,36,0.15)] backdrop-blur-lg sm:p-6">
         <TechGrid subtle className="rounded-2xl" />
 
         <div className="absolute -right-16 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-amber-400/20 blur-3xl" />
 
-        <p className="relative text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-amber-200">
+        <p className="relative text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-amber-200">
           Efeito Reservas
         </p>
 
-        <blockquote className="relative mt-5 border-l-2 border-amber-400/70 pl-5 text-[1.02rem] leading-[1.75] text-zinc-200 sm:text-[1.08rem]">
+        <blockquote className="relative mt-4 border-l-2 border-amber-400/70 pl-4 text-[0.95rem] leading-[1.7] text-zinc-200 sm:text-[1rem]">
           <p className="text-zinc-100">
             Não é uma aula técnica sobre ferramentas.
           </p>
 
-          <p className="mt-3 text-zinc-100">
+          <p className="mt-2 text-zinc-100">
             É uma conversa estratégica sobre estrutura,
             previsibilidade e operação no turismo.
           </p>
         </blockquote>
 
-        <div className="relative mt-7 grid grid-cols-1 gap-3 border-t border-white/10 pt-7">
+        <div className="relative mt-6 grid grid-cols-1 gap-2.5 border-t border-white/10 pt-6">
           <div className="flex items-center justify-between gap-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
               Quando
             </p>
 
-            <p className="text-base font-bold text-white">
+            <p className="text-sm font-bold text-white">
               Dia 27/05
             </p>
           </div>
 
           <div className="flex items-center justify-between gap-3">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
               Formato
             </p>
 
-            <p className="text-base font-bold text-white">
+            <p className="text-sm font-bold text-white">
               Ao vivo e gratuito
             </p>
           </div>
@@ -264,13 +264,13 @@ export default function Home() {
         <Reveal>
           <section
             aria-label="O problema invisível"
-            className="relative overflow-hidden border-b border-white/[0.07] px-5 py-20 sm:px-8 md:py-24 lg:py-28"
+            className="relative overflow-hidden border-b border-white/7 px-5 py-16 sm:px-8 md:py-20 lg:py-24"
           >
             <div className="absolute inset-0 bg-[#0e0e16]" />
             <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(251,191,36,0.11)_0%,transparent_48%)]" />
             <TechGrid subtle />
             <div className="relative mx-auto max-w-6xl">
-              <div className="flex flex-col gap-4 border-b border-white/10 pb-10 md:flex-row md:items-end md:justify-between">
+              <div className="flex flex-col gap-6 border-b border-white/10 pb-8 md:flex-row md:items-center md:justify-between md:pb-12">
                 <h2 className="max-w-2xl text-[1.875rem] font-bold tracking-tight text-white sm:text-4xl md:text-[2.75rem] md:leading-[1.08]">
                   O problema invisível
                 </h2>
@@ -278,22 +278,22 @@ export default function Home() {
                   #01
                 </p>
               </div>
-              <div className="mt-12 grid gap-10 md:grid-cols-12 md:gap-12">
-                <div className="md:col-span-5 md:border-r md:border-white/10 md:pr-12">
+              <div className="mt-8 grid gap-12 md:grid-cols-12 md:gap-16 lg:mt-10">
+                <div className="md:col-span-5 md:border-r md:border-white/10 md:pr-12 flex flex-col justify-center min-h-[200px]">
                   <p className="text-[1.35rem] font-semibold leading-snug text-white sm:text-2xl md:text-[1.65rem]">
                     Seu problema provavelmente não é falta de esforço.
                   </p>
-                  <p className="mt-5 text-[1.35rem] font-semibold leading-snug text-amber-200 sm:text-2xl md:text-[1.65rem]">
+                  <p className="mt-6 text-[1.35rem] font-semibold leading-snug text-amber-200 sm:text-2xl md:text-[1.65rem]">
                     É falta de estrutura.
                   </p>
                 </div>
-                <div className="space-y-7 text-[1.08rem] leading-[1.75] text-zinc-200 md:col-span-7 md:text-[1.12rem]">
+                <div className="space-y-8 text-[1.08rem] leading-[1.75] text-zinc-200 md:col-span-7 md:text-[1.12rem]">
                   <p>
                     Tem agente respondendo WhatsApp o dia inteiro, criando
                     conteúdo toda semana e mesmo assim sem previsibilidade.
                   </p>
-                  <div className="rounded-2xl border border-white/[0.12] bg-zinc-900/85 p-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.06)]">
-                    <p className="text-zinc-100">
+                  <div className="rounded-2xl border border-white/12 bg-zinc-900/85 p-6 shadow-[0_20px_50px_-20px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.06)]">
+                    <p className="text-zinc-100 leading-[1.8]">
                       O Instagram não gera conversas qualificadas.
                       <br />
                       O atendimento depende totalmente da agente.
@@ -319,7 +319,7 @@ export default function Home() {
         <Reveal>
           <section
             aria-label="O que será mostrado"
-            className="relative overflow-hidden border-b border-white/[0.07] px-5 py-20 sm:px-8 md:py-24 lg:py-28"
+            className="relative overflow-hidden border-b border-white/7 px-5 py-20 sm:px-8 md:py-24 lg:py-28"
           >
             <SectionGlow />
             <div className="absolute inset-0 bg-[#08080f]" />
@@ -332,19 +332,19 @@ export default function Home() {
                 <h2 className="text-[1.875rem] font-bold tracking-tight text-white sm:text-4xl md:text-[2.75rem] md:leading-[1.08]">
                   O que será mostrado
                 </h2>
-                <span className="rounded-xl border border-amber-400/45 bg-amber-500/[0.15] px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-amber-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-xs">
+                <span className="rounded-xl border border-amber-400/45 bg-amber-500/15 px-4 py-2 text-[11px] font-bold uppercase tracking-[0.2em] text-amber-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] sm:text-xs">
                   Ao vivo · #01
                 </span>
               </div>
 
-              <p className="mx-auto mt-12 max-w-3xl text-center text-[1.12rem] leading-[1.65] text-zinc-100 sm:text-[1.2rem] sm:leading-[1.7] md:text-[1.28rem]">
+              <p className="mx-auto mt-10 max-w-3xl text-center text-[1.12rem] leading-[1.65] text-zinc-100 sm:text-[1.2rem] sm:leading-[1.7] md:text-[1.28rem]">
                 Nessa reunião estratégica eu vou mostrar como estou estruturando
                 uma operação de conteúdo, atendimento e reservas usando IA
                 aplicada ao turismo.
               </p>
 
-              <div className="mx-auto mt-10 max-w-2xl rounded-2xl border border-amber-400/35 bg-gradient-to-b from-amber-500/[0.14] to-zinc-950/40 p-7 text-center shadow-[0_22px_60px_-28px_rgba(251,191,36,0.35)]">
-                <p className="text-[1.06rem] leading-[1.65] text-zinc-50 sm:text-[1.12rem]">
+              <div className="mx-auto mt-12 max-w-2xl rounded-2xl border border-amber-400/35 bg-gradient-to-b from-amber-500/14 to-zinc-950/40 p-7 text-center shadow-[0_22px_60px_-28px_rgba(251,191,36,0.35)]">
+                <p className="text-[1.06rem] leading-[1.7] text-zinc-50 sm:text-[1.12rem]">
                   Sem promessas irreais.
                   <br />
                   Sem automações complexas.
@@ -356,15 +356,15 @@ export default function Home() {
               <p className="mt-14 text-center text-[13px] font-bold uppercase tracking-[0.28em] text-amber-200/90">
                 Você vai entender
               </p>
-              <ul className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
                 {UNDERSTAND_ITEMS.map((item) => (
                   <li
                     key={item}
-                    className="group relative overflow-hidden rounded-2xl border border-white/[0.12] bg-gradient-to-b from-zinc-800/60 to-zinc-950/90 p-6 shadow-[0_22px_55px_-28px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.07)] transition-all duration-300 hover:-translate-y-0.5 hover:border-amber-400/40 hover:shadow-[0_26px_60px_-24px_rgba(251,191,36,0.22)]"
+                    className="group relative overflow-hidden rounded-2xl border border-white/12 bg-gradient-to-b from-zinc-800/60 to-zinc-950/90 p-8 shadow-[0_22px_55px_-28px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.07)] transition-all duration-500 hover:-translate-y-1 hover:border-amber-400/50 hover:shadow-[0_32px_70px_-28px_rgba(251,191,36,0.25),0_0_40px_-8px_rgba(251,191,36,0.15),inset_0_1px_0_rgba(255,255,255,0.08)]"
                   >
-                    <span className="absolute right-4 top-4 h-1 w-10 rounded-full bg-gradient-to-r from-amber-500/0 via-amber-300/55 to-amber-500/0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                    <span className="absolute right-4 top-4 h-1 w-10 rounded-full bg-gradient-to-r from-amber-500/0 via-amber-300/55 to-amber-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     <span className="mb-4 inline-block h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_14px_rgba(251,191,36,0.65)]" />
-                    <p className="text-[1.02rem] font-medium leading-[1.55] text-zinc-50 sm:text-[1.06rem]">
+                    <p className="text-[1.02rem] font-medium leading-[1.7] text-zinc-50 sm:text-[1.06rem]">
                       {item}
                     </p>
                   </li>
@@ -378,7 +378,7 @@ export default function Home() {
         <Reveal>
           <section
             aria-label="Benefícios"
-            className="relative overflow-hidden border-b border-white/[0.07] px-5 py-20 sm:px-8 md:py-24 lg:py-28"
+            className="relative overflow-hidden border-b border-white/7 px-5 py-20 sm:px-8 md:py-24 lg:py-28"
           >
             <div className="absolute inset-0 bg-[#0d0d14]" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_85%_55%_at_50%_100%,rgba(251,191,36,0.16),transparent_58%)]" />
@@ -388,20 +388,20 @@ export default function Home() {
               <h2 className="max-w-3xl text-[1.875rem] font-bold tracking-tight text-white sm:text-4xl md:text-[2.75rem] md:leading-[1.08]">
                 Benefícios
               </h2>
-              <p className="mt-5 max-w-2xl text-[1.12rem] leading-[1.65] text-zinc-200 sm:text-[1.2rem]">
+              <p className="mt-6 max-w-2xl text-[1.12rem] leading-[1.65] text-zinc-200 sm:text-[1.2rem]">
                 Essa reunião é para agentes de viagens que:
               </p>
 
-              <div className="mt-14 grid gap-6 md:grid-cols-2">
+              <div className="mt-12 grid gap-8 md:grid-cols-2">
                 {FOR_WHO_ITEMS.map((item, i) => (
                   <div
                     key={item}
-                    className="relative flex gap-5 overflow-hidden rounded-2xl border border-white/[0.11] bg-[linear-gradient(155deg,rgba(30,30,38,0.95),rgba(10,10,14,0.98))] p-7 shadow-[0_26px_60px_-28px_rgba(0,0,0,0.72),inset_0_1px_0_rgba(255,255,255,0.08)]"
+                    className="relative flex gap-5 overflow-hidden rounded-2xl border border-white/11 bg-[linear-gradient(155deg,rgba(30,30,38,0.95),rgba(10,10,14,0.98))] p-7 shadow-[0_26px_60px_-28px_rgba(0,0,0,0.72),inset_0_1px_0_rgba(255,255,255,0.08)]"
                   >
-                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-amber-400/40 bg-amber-500/[0.18] text-[15px] font-black text-amber-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-amber-400/40 bg-amber-500/18 text-[15px] font-black text-amber-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.15)]">
                       {(i + 1).toString().padStart(2, "0")}
                     </div>
-                    <p className="pt-2 text-[1.06rem] font-medium leading-[1.6] text-zinc-100 sm:text-[1.1rem]">
+                    <p className="pt-2 text-[1.06rem] font-medium leading-[1.65] text-zinc-100 sm:text-[1.1rem]">
                       {item}
                     </p>
                   </div>
@@ -415,7 +415,7 @@ export default function Home() {
         <Reveal>
           <section
             aria-label="CTA premium"
-            className="relative overflow-hidden border-b border-white/[0.07] px-5 py-20 sm:px-8 md:py-28"
+            className="relative overflow-hidden border-b border-white/7 px-5 py-20 sm:px-8 md:py-28"
           >
             <div className="absolute inset-0 bg-[#090912]" />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_-10%,rgba(251,191,36,0.34),transparent_48%)]" />
@@ -425,10 +425,10 @@ export default function Home() {
               <p className="text-[13px] font-bold uppercase tracking-[0.3em] text-amber-300">
                 CTA premium
               </p>
-              <h2 className="mt-5 text-[2.35rem] font-bold tracking-tight text-white sm:text-5xl md:text-[3.1rem] md:leading-[1.05]">
+              <h2 className="mt-6 text-[2.35rem] font-bold tracking-tight text-white sm:text-5xl md:text-[3.1rem] md:leading-[1.05]">
                 Grupo VIP
               </h2>
-              <p className="mt-6 text-[1.08rem] leading-[1.6] text-zinc-200 sm:text-[1.15rem]">
+              <p className="mt-8 text-[1.08rem] leading-[1.6] text-zinc-200 sm:text-[1.15rem]">
                 SALA ESTRATÉGICA EFEITO RESERVAS #01 · Dia 27/05 • Ao vivo e
                 gratuito
               </p>
@@ -438,8 +438,9 @@ export default function Home() {
                   type="button"
                   onClick={handleJoinVip}
                   disabled={joining}
+                  whileHover={reduceMotion ? undefined : { scale: 1.02, boxShadow: "0 0 60px -10px rgba(251,191,36,0.7)" }}
                   whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                  className="group relative mx-auto inline-flex w-full max-w-lg items-center justify-center overflow-hidden rounded-2xl border border-amber-300/55 bg-gradient-to-b from-amber-200 via-amber-400 to-orange-600 px-10 py-[1.15rem] text-[1.06rem] font-bold text-zinc-950 shadow-[0_0_52px_-10px_rgba(251,191,36,0.55),inset_0_1px_0_rgba(255,255,255,0.35)] transition-opacity disabled:opacity-55 sm:w-auto sm:min-w-[320px] sm:text-[1.12rem]"
+                  className="group relative mx-auto inline-flex w-full max-w-lg items-center justify-center overflow-hidden rounded-2xl border border-amber-300/60 bg-gradient-to-b from-amber-200 via-amber-400 to-orange-600 px-10 py-[1.2rem] text-[1.06rem] font-bold text-zinc-950 shadow-[0_0_52px_-10px_rgba(251,191,36,0.55),inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 disabled:opacity-55 sm:w-auto sm:min-w-[340px] sm:text-[1.12rem] hover:shadow-[0_0_80px_-10px_rgba(251,191,36,0.8),inset_0_1px_0_rgba(255,255,255,0.4)]"
                 >
                   <span className="absolute inset-0 bg-gradient-to-t from-transparent via-white/30 to-transparent opacity-80" />
                   <span className="relative">
@@ -448,7 +449,7 @@ export default function Home() {
                 </motion.button>
               </div>
 
-              <p className="mt-8 text-[1.02rem] leading-[1.65] text-zinc-300 sm:text-[1.06rem]">
+              <p className="mt-10 text-[1.02rem] leading-[1.65] text-zinc-300 sm:text-[1.06rem]">
                 Você vai receber o link da reunião e os materiais
                 complementares.
               </p>
@@ -460,7 +461,7 @@ export default function Home() {
         <Reveal>
           <section
             aria-label="Perguntas frequentes"
-            className="relative border-t border-white/[0.06] px-5 py-20 sm:px-8 md:py-28"
+            className="relative border-t border-white/6 px-5 py-20 sm:px-8 md:py-28"
           >
             <div className="absolute inset-0 bg-[#08080e]" />
             <TechGrid subtle />
@@ -470,7 +471,7 @@ export default function Home() {
                 FAQ
               </h2>
 
-              <div className="mt-12 space-y-4">
+              <div className="mt-10 space-y-6">
                 {[
                   {
                     q: "Isso é uma aula técnica sobre ferramentas?",
@@ -491,15 +492,15 @@ export default function Home() {
                 ].map((item) => (
                   <details
                     key={item.q}
-                    className="group overflow-hidden rounded-2xl border border-white/[0.11] bg-zinc-900/70 shadow-[0_18px_46px_-24px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.06)] open:border-amber-400/35 open:bg-zinc-900/90 open:shadow-[0_22px_55px_-22px_rgba(251,191,36,0.15),inset_0_1px_0_rgba(255,255,255,0.08)]"
+                    className="group overflow-hidden rounded-2xl border border-white/12 bg-zinc-900/75 shadow-[0_20px_50px_-26px_rgba(0,0,0,0.6),inset_0_1px_0_rgba(255,255,255,0.06)] transition-all duration-300 open:border-amber-400/40 open:bg-zinc-900/95 open:shadow-[0_24px_60px_-24px_rgba(251,191,36,0.18),inset_0_1px_0_rgba(255,255,255,0.08)]"
                   >
-                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-6 py-5 text-left text-[1.05rem] font-semibold text-white transition-colors hover:bg-white/[0.04] sm:text-[1.08rem] [&::-webkit-details-marker]:hidden">
+                    <summary className="flex cursor-pointer list-none items-center justify-between gap-4 px-7 py-6 text-left text-[1.05rem] font-semibold text-white transition-colors hover:bg-white/5 sm:text-[1.08rem] [&::-webkit-details-marker]:hidden">
                       {item.q}
-                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-500/70 bg-zinc-950 text-sm font-light text-amber-300 group-open:border-amber-400/50 group-open:bg-amber-500/[0.15]">
+                      <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-zinc-500/70 bg-zinc-950 text-sm font-light text-amber-300 transition-all duration-300 group-open:border-amber-400/60 group-open:bg-amber-500/20 group-open:rotate-45">
                         +
                       </span>
                     </summary>
-                    <div className="border-t border-white/10 px-6 py-5 text-[1.02rem] leading-[1.65] text-zinc-200 sm:text-[1.06rem]">
+                    <div className="border-t border-white/10 px-7 py-6 text-[1.02rem] leading-[1.7] text-zinc-200 sm:text-[1.06rem]">
                       {item.a}
                     </div>
                   </details>
@@ -514,7 +515,7 @@ export default function Home() {
           </section>
         </Reveal>
 
-        <footer className="border-t border-white/[0.08] px-5 py-10 text-center text-[0.8rem] font-medium uppercase tracking-[0.22em] text-zinc-400 sm:px-8 sm:text-sm">
+        <footer className="border-t border-white/8 px-5 py-12 text-center text-[0.8rem] font-medium uppercase tracking-[0.22em] text-zinc-400 sm:px-8 sm:text-sm">
           Efeito Reservas #01 · 27/05 · Ao vivo e gratuito
         </footer>
       </main>
