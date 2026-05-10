@@ -81,6 +81,25 @@ const FOR_WHO_ITEMS = [
   "Querem organizar o negócio antes de crescer",
 ] as const;
 
+const MARQUEE_ITEMS = [
+  "EFEITO RESERVAS",
+  "OPERAÇÃO PREVISÍVEL",
+  "IA NO TURISMO",
+  "WHATSAPP",
+  "CONTEÚDO",
+  "RESERVAS",
+  "SISTEMA",
+  "AUTOMAÇÃO",
+] as const;
+
+const CARD_ART_BACKGROUNDS = [
+  "url('/globe.svg')",
+  "url('/window.svg')",
+  "url('/file.svg')",
+  "url('/window.svg')",
+  "url('/globe.svg')",
+] as const;
+
 export default function Home() {
   const reduceMotion = useReducedMotion();
   const [toast, setToast] = useState<ToastState | null>(null);
@@ -139,6 +158,12 @@ export default function Home() {
         id="conteudo"
         className="relative z-10 flex flex-col border-t border-white/[0.08] bg-[#0a0a0f]/95"
       >
+        <style jsx global>{`
+          @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+          }
+        `}</style>
         {/* Hero */}
         <section
   aria-label="Hero"
@@ -171,8 +196,8 @@ export default function Home() {
     className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#0a0a0f] via-[#0a0a0f]/70 to-transparent"
   />
 
-  <div className="relative z-10 mx-auto flex max-w-6xl flex-col lg:min-h-[70vh] lg:flex-row lg:items-stretch lg:gap-12">
-    <div className="flex flex-1 flex-col justify-center">
+  <div className="relative z-10 mx-auto flex max-w-5xl flex-col justify-center lg:min-h-[70vh]">
+    <div className="flex flex-col justify-center">
       <Reveal delayMs={0}>
         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-amber-400/40 bg-amber-500/15 px-4 py-2 text-[12px] font-semibold uppercase tracking-[0.18em] text-amber-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] backdrop-blur-sm">
           Reunião estratégica
@@ -193,69 +218,59 @@ export default function Home() {
 
       <Reveal delayMs={80}>
         <p className="mt-8 max-w-2xl text-[1.15rem] leading-relaxed text-zinc-200 sm:text-[1.28rem] sm:leading-[1.7] md:text-[1.45rem]">
-          Como agentes de viagens estão organizando Instagram, WhatsApp
+          Como agentes de viagens estão organizando Instagram,
+          <span className="mx-1 inline-flex rounded-full bg-amber-400/10 px-2 py-0.5 font-semibold uppercase tracking-[0.22em] text-amber-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)] backdrop-blur-sm">
+            WhatsApp
+          </span>
           e atendimento para gerar reservas com mais previsibilidade
           usando IA.
         </p>
       </Reveal>
 
       <Reveal delayMs={120}>
-        <div className="mt-8 flex flex-wrap items-center gap-4">
-          <span className="flex items-center gap-2.5 rounded-2xl border border-zinc-600/70 bg-zinc-900/90 px-5 py-3.5 text-[0.95rem] font-semibold text-white shadow-[0_12px_40px_-12px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.1),0_0_0_1px_rgba(251,191,36,0.18)] backdrop-blur-sm sm:text-base">
-            <span className="h-2.5 w-2.5 rounded-full bg-amber-400 shadow-[0_0_16px_rgba(251,191,36,0.75)]" />
-            Dia 27/05 • Ao vivo e gratuito
-          </span>
+        <div className="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+          <motion.button
+            type="button"
+            onClick={handleJoinVip}
+            disabled={joining}
+            whileTap={reduceMotion ? undefined : { scale: 0.98 }}
+            className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-amber-300 via-amber-200 to-amber-100 px-8 py-4 text-sm font-semibold text-zinc-950 shadow-[0_18px_50px_-18px_rgba(251,191,36,0.8)] transition-transform duration-200 hover:-translate-y-0.5 disabled:opacity-60"
+          >
+            {joining ? "Abrindo..." : "Entrar no grupo VIP"}
+          </motion.button>
         </div>
       </Reveal>
+
+      <div className="mt-4 flex flex-wrap items-center gap-3 text-sm text-amber-100/80">
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 backdrop-blur-sm">
+          <span className="text-[0.85rem]">📅</span>
+          27/05
+        </span>
+        <span className="text-amber-300/70">•</span>
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 backdrop-blur-sm">
+          <span className="text-[0.8rem]">🔴</span>
+          Ao vivo
+        </span>
+        <span className="text-amber-300/70">•</span>
+        <span className="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1 backdrop-blur-sm">
+          <span className="text-[0.9rem]">✨</span>
+          Gratuito
+        </span>
+      </div>
     </div>
 
-    <Reveal
-      delayMs={100}
-      className="relative mt-16 flex flex-1 flex-col justify-center lg:mt-0 lg:max-w-sm lg:translate-x-0 lg:translate-y-6"
-    >
-      <div className="relative overflow-hidden rounded-2xl border border-zinc-500/40 bg-gradient-to-br from-zinc-800/85 via-zinc-900/90 to-[#0d0d14]/95 p-5 shadow-[0_28px_70px_-18px_rgba(0,0,0,0.75),inset_0_1px_0_rgba(255,255,255,0.08),0_0_0_1px_rgba(251,191,36,0.15)] backdrop-blur-lg sm:p-6">
-        <TechGrid subtle className="rounded-2xl" />
+    <div className="h-16" />
+  </div>
 
-        <div className="absolute -right-16 top-1/2 h-48 w-48 -translate-y-1/2 rounded-full bg-amber-400/20 blur-3xl" />
-
-        <p className="relative text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-amber-200">
-          Efeito Reservas
-        </p>
-
-        <blockquote className="relative mt-4 border-l-2 border-amber-400/70 pl-4 text-[0.95rem] leading-[1.7] text-zinc-200 sm:text-[1rem]">
-          <p className="text-zinc-100">
-            Não é uma aula técnica sobre ferramentas.
-          </p>
-
-          <p className="mt-2 text-zinc-100">
-            É uma conversa estratégica sobre estrutura,
-            previsibilidade e operação no turismo.
-          </p>
-        </blockquote>
-
-        <div className="relative mt-6 grid grid-cols-1 gap-2.5 border-t border-white/10 pt-6">
-          <div className="flex items-center justify-between gap-3">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
-              Quando
-            </p>
-
-            <p className="text-sm font-bold text-white">
-              Dia 27/05
-            </p>
-          </div>
-
-          <div className="flex items-center justify-between gap-3">
-            <p className="text-[10px] font-semibold uppercase tracking-[0.14em] text-zinc-400">
-              Formato
-            </p>
-
-            <p className="text-sm font-bold text-white">
-              Ao vivo e gratuito
-            </p>
-          </div>
-        </div>
-      </div>
-    </Reveal>
+  <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 hidden h-14 overflow-hidden border-t border-white/10 bg-black/15 backdrop-blur-xl sm:block">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_left,rgba(255,214,112,0.12),transparent_32%),radial-gradient(circle_at_right,rgba(255,214,112,0.06),transparent_25%)]" />
+    <div className="relative left-0 flex min-w-[200%] animate-[marquee_32s_linear_infinite] items-center gap-10 px-6 text-xs uppercase tracking-[0.34em] text-amber-200/80">
+      {MARQUEE_ITEMS.concat(MARQUEE_ITEMS).map((item, index) => (
+        <span key={`${item}-${index}`} className="whitespace-nowrap">
+          {item}
+        </span>
+      ))}
+    </div>
   </div>
 </section>
 
@@ -281,10 +296,18 @@ export default function Home() {
               <div className="mt-8 grid gap-12 md:grid-cols-12 md:gap-16 lg:mt-10">
                 <div className="md:col-span-5 md:border-r md:border-white/10 md:pr-12 flex flex-col justify-center min-h-[200px]">
                   <p className="text-[1.35rem] font-semibold leading-snug text-white sm:text-2xl md:text-[1.65rem]">
-                    Seu problema provavelmente não é falta de esforço.
+                    Seu problema provavelmente{' '}
+                    <span className="inline-flex rounded-full bg-amber-400/10 px-3 py-1 text-amber-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+                      não é falta de esforço
+                    </span>
+                    .
                   </p>
                   <p className="mt-6 text-[1.35rem] font-semibold leading-snug text-amber-200 sm:text-2xl md:text-[1.65rem]">
-                    É falta de estrutura.
+                    É{' '}
+                    <span className="inline-flex rounded-full bg-amber-400/14 px-3 py-1 text-amber-100 shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
+                      falta de estrutura
+                    </span>
+                    .
                   </p>
                 </div>
                 <div className="space-y-8 text-[1.08rem] leading-[1.75] text-zinc-200 md:col-span-7 md:text-[1.12rem]">
@@ -357,14 +380,21 @@ export default function Home() {
                 Você vai entender
               </p>
               <ul className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-                {UNDERSTAND_ITEMS.map((item) => (
+                {UNDERSTAND_ITEMS.map((item, index) => (
                   <li
                     key={item}
                     className="group relative overflow-hidden rounded-2xl border border-white/12 bg-gradient-to-b from-zinc-800/60 to-zinc-950/90 p-8 shadow-[0_22px_55px_-28px_rgba(0,0,0,0.65),inset_0_1px_0_rgba(255,255,255,0.07)] transition-all duration-500 hover:-translate-y-1 hover:border-amber-400/50 hover:shadow-[0_32px_70px_-28px_rgba(251,191,36,0.25),0_0_40px_-8px_rgba(251,191,36,0.15),inset_0_1px_0_rgba(255,255,255,0.08)]"
+                    style={{
+                      backgroundImage: CARD_ART_BACKGROUNDS[index % CARD_ART_BACKGROUNDS.length],
+                      backgroundPosition: "right 1.2rem bottom 1.2rem",
+                      backgroundRepeat: "no-repeat",
+                      backgroundSize: "12rem",
+                    }}
                   >
+                    <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,214,112,0.08),transparent_34%)] opacity-90" />
                     <span className="absolute right-4 top-4 h-1 w-10 rounded-full bg-gradient-to-r from-amber-500/0 via-amber-300/55 to-amber-500/0 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
                     <span className="mb-4 inline-block h-2 w-2 rounded-full bg-amber-400 shadow-[0_0_14px_rgba(251,191,36,0.65)]" />
-                    <p className="text-[1.02rem] font-medium leading-[1.7] text-zinc-50 sm:text-[1.06rem]">
+                    <p className="relative text-[1.02rem] font-medium leading-[1.7] text-zinc-50 sm:text-[1.06rem]">
                       {item}
                     </p>
                   </li>
@@ -422,36 +452,54 @@ export default function Home() {
             <div className="absolute inset-x-10 top-[42%] h-px bg-gradient-to-r from-transparent via-amber-400/50 to-transparent" />
 
             <div className="relative mx-auto max-w-3xl text-center">
-              <p className="text-[13px] font-bold uppercase tracking-[0.3em] text-amber-300">
-                CTA premium
+              <p className="text-[12px] font-semibold uppercase tracking-[0.32em] text-amber-200/90">
+                Enquanto muitos agentes usam IA para produzir mais…
               </p>
-              <h2 className="mt-6 text-[2.35rem] font-bold tracking-tight text-white sm:text-5xl md:text-[3.1rem] md:leading-[1.05]">
-                Grupo VIP
+              <h2 className="mt-6 text-[2.45rem] font-black tracking-tight text-white sm:text-5xl md:text-[3.1rem] md:leading-[1.02]">
+                …outros usam IA para finalmente organizar a operação.
               </h2>
-              <p className="mt-8 text-[1.08rem] leading-[1.6] text-zinc-200 sm:text-[1.15rem]">
-                SALA ESTRATÉGICA EFEITO RESERVAS #01 · Dia 27/05 • Ao vivo e
-                gratuito
+              <p className="mx-auto mt-6 max-w-2xl text-[1.03rem] leading-[1.75] text-zinc-300 sm:text-[1.1rem]">
+                Menos improviso. Menos dependência de indicação. Menos caos no
+                WhatsApp. Mais clareza, previsibilidade e uma operação com
+                estrutura.
               </p>
 
-              <div className="mt-12">
+              <div className="mx-auto mt-10 max-w-xl rounded-4xl border border-amber-300/20 bg-white/5 p-6 text-left shadow-[0_32px_90px_-60px_rgba(251,191,36,0.85)] backdrop-blur-xl">
+                <p className="text-[0.75rem] font-semibold uppercase tracking-[0.3em] text-amber-200/70">
+                  O que essa reunião revela
+                </p>
+                <p className="mt-3 text-[1rem] leading-[1.7] text-zinc-100">
+                  A nova forma de operar IA em turismo: menos trabalho manual,
+                  menos ruído e mais regras que mantêm o atendimento e a
+                  reserva alinhados.
+                </p>
+              </div>
+
+              <div className="mt-10">
                 <motion.button
                   type="button"
                   onClick={handleJoinVip}
                   disabled={joining}
-                  whileHover={reduceMotion ? undefined : { scale: 1.02, boxShadow: "0 0 60px -10px rgba(251,191,36,0.7)" }}
+                  whileHover={reduceMotion ? undefined : { scale: 1.02, boxShadow: "0 0 70px -14px rgba(251,191,36,0.85)" }}
                   whileTap={reduceMotion ? undefined : { scale: 0.98 }}
-                  className="group relative mx-auto inline-flex w-full max-w-lg items-center justify-center overflow-hidden rounded-2xl border border-amber-300/60 bg-gradient-to-b from-amber-200 via-amber-400 to-orange-600 px-10 py-[1.2rem] text-[1.06rem] font-bold text-zinc-950 shadow-[0_0_52px_-10px_rgba(251,191,36,0.55),inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 disabled:opacity-55 sm:w-auto sm:min-w-[340px] sm:text-[1.12rem] hover:shadow-[0_0_80px_-10px_rgba(251,191,36,0.8),inset_0_1px_0_rgba(255,255,255,0.4)]"
+                  className="group relative mx-auto inline-flex w-full max-w-lg items-center justify-center overflow-hidden rounded-3xl border border-amber-300/50 bg-linear-to-b from-amber-200 via-amber-300 to-amber-500 px-10 py-[1.2rem] text-[1.05rem] font-semibold text-zinc-950 shadow-[0_0_60px_-16px_rgba(251,191,36,0.65),inset_0_1px_0_rgba(255,255,255,0.35)] transition-all duration-300 disabled:opacity-60 sm:w-auto sm:min-w-[340px] sm:text-[1.1rem] hover:shadow-[0_0_90px_-16px_rgba(251,191,36,0.9),inset_0_1px_0_rgba(255,255,255,0.45)]"
                 >
-                  <span className="absolute inset-0 bg-gradient-to-t from-transparent via-white/30 to-transparent opacity-80" />
+                  <span className="absolute inset-0 bg-linear-to-t from-transparent via-white/30 to-transparent opacity-80" />
                   <span className="relative">
-                    {joining ? "Abrindo..." : "Entrar no grupo VIP"}
+                    {joining ? "Abrindo..." : "Seguir para o grupo VIP"}
                   </span>
                 </motion.button>
               </div>
 
-              <p className="mt-10 text-[1.02rem] leading-[1.65] text-zinc-300 sm:text-[1.06rem]">
-                Você vai receber o link da reunião e os materiais
-                complementares.
+              <div className="mx-auto mt-10 flex max-w-md items-center justify-center gap-3 text-sm text-amber-200/70">
+                <span className="h-px flex-1 bg-linear-to-r from-transparent via-amber-400/50 to-transparent" />
+                <span className="uppercase tracking-[0.28em]">O próximo passo lógico</span>
+                <span className="h-px flex-1 bg-linear-to-r from-transparent via-amber-400/50 to-transparent" />
+              </div>
+
+              <p className="mt-6 text-[0.98rem] leading-[1.7] text-zinc-300 sm:text-[1.02rem]">
+                Convite reservado para quem quer entender como IA pode ser
+                aplicada com estrutura real e operação previsível.
               </p>
             </div>
           </section>
